@@ -1,0 +1,12 @@
+storage:
+  host: filesystem
+  storagePath: /tmp
+  isEncrypt: true
+
+  # Il est possible de renseigner la clef maitre et le salt dans la config pour l'automatisation ou le dev
+  # mais cette pratique est déconseillée en production. La clef et le salt seront alors demandé
+  # au démarrage de l'application.
+  encryptMasterKey: toto1234
+  encryptSalt: abc
+
+    

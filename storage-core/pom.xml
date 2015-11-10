@@ -1,0 +1,46 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.gsafe.storage</groupId>
+        <artifactId>storage</artifactId>
+        <version>1.1</version>
+    </parent>
+    <artifactId>storage-core</artifactId>
+    <dependencies>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${guava.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.jclouds</groupId>
+            <artifactId>jclouds-core</artifactId>
+            <version>${jclouds.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.jclouds</groupId>
+            <artifactId>jclouds-blobstore</artifactId>
+            <version>${jclouds.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.jclouds</groupId>
+            <artifactId>jclouds-allblobstore</artifactId>
+            <version>${jclouds.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.gsafe.storage</groupId>
+            <artifactId>storage-commons</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>license-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>

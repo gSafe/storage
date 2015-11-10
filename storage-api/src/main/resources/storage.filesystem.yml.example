@@ -1,0 +1,16 @@
+storage:
+  host: filesystem
+  storagePath: /tmp 
+
+#http :
+#  port: 8443
+#  adminPort: 8061
+#  connectorType: nonblocking+ssl
+#  ssl:
+#    keyStore : path to server.com.jks
+#    keyStorePassword : xxxx
+#    validatePeers : false
+#    trustStore: path to ca.jks
+#    trustStorePassword: xxxx
+#    trustStoreType: JKS
+#    needClientAuth : true

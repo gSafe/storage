@@ -1,0 +1,114 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.gsafe.storage</groupId>
+	<artifactId>storage</artifactId>
+	<name>storage</name>
+	<version>1.1</version>
+	<packaging>pom</packaging>
+
+	<modules>
+		<module>storage-api</module>
+		<module>storage-client</module>
+		<module>storage-commons</module>
+		<module>storage-core</module>
+	</modules>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+		<!-- TEST -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>${logback.version}</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<properties>
+		<dropwizard.version>0.6.2</dropwizard.version>
+		<guava.version>15.0</guava.version>
+		<jclouds.version>1.7.1</jclouds.version>
+		<junit.version>4.8.2</junit.version>
+		<!-- Check that Jersey version is the one pulled by Dropwizard -->
+		<jersey.version>1.17.1</jersey.version>
+		<logback.version>1.0.7</logback.version>
+		<mockito.version>1.8.5</mockito.version>
+		<slf4j.version>1.7.2</slf4j.version>
+	</properties>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>2.5.1</version>
+					<configuration>
+						<source>1.7</source>
+						<target>1.7</target>
+						<testSource>1.7</testSource>
+						<testTarget>1.7</testTarget>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>license-maven-plugin</artifactId>
+					<version>1.5</version>
+					<configuration>
+						<licenseName>agpl_v3</licenseName>
+						<organizationName>gSafe</organizationName>
+						<inceptionYear>2013</inceptionYear>
+					</configuration>
+					<executions>
+						<execution>
+							<id>first</id>
+							<goals>
+								<goal>update-file-header</goal>
+								<goal>update-project-license</goal>
+							</goals>
+							<phase>process-sources</phase>
+						</execution>
+					</executions>
+				</plugin>
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<!-- copy-dependency plugin -->
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>org.codehaus.mojo</groupId>
+										<artifactId>license-maven-plugin</artifactId>
+										<versionRange>[1.5.0,)</versionRange>
+										<goals>
+											<goal>update-file-header</goal>
+											<goal>update-project-license</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore />
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+</project>

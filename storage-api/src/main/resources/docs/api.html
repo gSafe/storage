@@ -1,0 +1,228 @@
+<!--
+  #%L
+  storage-api
+  %%
+  Copyright (C) 2013 - 2014 gSafe
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>API - audit</title>
+        
+        <link href="styles/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="styles/doc2.css" rel="stylesheet"></link>
+    </head>
+    
+    <body>
+        <div class="row-fluid">
+            <div class="span2">
+                <a href="index.html"><img id="novapost" src="images/novapost_logo.png" width="200" /></a>
+            </div>
+            <header class="span9">
+                <h1>
+                    STORAGE WEB SERVICE
+                </h1>
+            </header>
+        </div>
+        
+        <div class="row-fluid">
+            <div class="span2">
+                <div id="table_of_content">
+                    <h2>Table of content</h2>
+                    <ul>    
+                        <li><a href="#create_container">Create container</a></li>
+                        <li><a href="#delete_container">Delete container</a></li>
+                        <li><a href="#container_is_exist">Container is exist?</a></li>
+                        <li><a href="#store_document">Store Document</a></li>
+                        <li><a href="#retrieve_document">Retrieve Document</a></li>
+                        <li><a href="#delete_document">Delete Document</a></li>
+                        <li><a href="#document_is_exist">Document is exist?</a></li>
+                        <li><a href="#document_integrity">Check Document Integrity</a></li>
+                    </ul>
+                </div><!-- table_of_content-->
+            </div>
+            
+            <div class="span9 method">
+                <h2 id="create_container">Create Container</h2>
+                <div class="row-fluid">
+                    <div class="span6">
+                        <div class="url"><div class="post">POST</div><div class="path">/containers/{name}</div></div>
+                        <h3>Query Parameter:</h3>
+                        <ul>
+                            <li>name: string (mandatory)</li>
+                        </ul>
+                    </div>
+                    <div class="span6">
+                        <h3>Responses:</h3>
+                        <ul>
+                            <li><strong>200</strong> - Created</li>
+                            <li><strong>400</strong> - Bad Request</li>
+                        </ul>
+                        
+                    </div>
+                </div>
+                <h3>Example:</h3>
+                <pre><code>curl -i -XPOST http://storage.gsafe.net:8080/containers/my_container</code></pre>
+            </div>
+        </div>
+        
+        <div class="row-fluid">
+            <div class="span9 offset2 method">
+                <h2 id="delete_container">Delete Container</h2>
+                <div class="row-fluid">
+                    <div class="span6">
+                        <div class="url"><div class="delete">DELETE</div><div class="path">/containers/{name}</div></div>
+                        <h3>Query parameter:</h3>
+                        <ul>
+                            <li>name: string (mandatory)</li>
+                        </ul>
+                    </div>
+                    <div class="span6">
+                        <h3>Responses:</h3>
+                        <ul>
+                            <li><strong>200</strong> - OK</li>
+                            <li><strong>404</strong> - Not Found</li>
+                        </ul>
+                        
+                    </div>
+                </div>
+                <h3>Example:</h3>
+                <pre><code>curl ­-XDELETE http://storage.gsafe.net:8080/containers/my_container</code></pre>
+                
+            </div>
+        </div>
+        
+        <div class="row-fluid">
+            <div class="span9 offset2 method">
+                <h2 id="container_is_exist">Container is exist?</h2>
+                <div class="row-fluid">
+                    <div class="span6">
+                        <div class="url"><div class="get">GET</div><div class="path">/containers/{name}</div></div>
+                        <h3>Query parameter:</h3>
+                        <ul>
+                            <li>name: string (mandatory)</li>
+                        </ul>
+                    </div>
+                    <div class="span6">
+                        <h3>Responses:</h3>
+                        <ul>
+                            <li><strong>200</strong> - OK</li>
+                            <li><strong>404</strong> - Not Found</li>
+                        </ul>
+                        
+                    </div>
+                </div>
+                <h3>Example:</h3>
+                <pre><code>curl ­-XGET http://storage.gsafe.net:8080/containers/my_container</code></pre>
+            </div>
+        </div>
+        
+        
+        <div class="row-fluid">
+            <div class="span9 offset2 method">
+                <h2 id="store_document">Store document</h2>
+                <div class="row-fluid">
+                    <div class="span6">
+                        <div class="url"><div class="post">POST</div><div class="path">/containers/{name}</div></div>
+                        <h3>Form Data parameters:</h3>
+                        <ul>
+                            <li>on: stream</li>
+                            <li>on: content disposition</li>
+                            <li>on: body part</li
+                            <li>fingerprint: string</li> 
+                            <li>container: string</li>
+                            <li>path: string</li>
+                        </ul>
+                    </div>
+                    <div class="span6">
+                        <h3>Responses:</h3>
+                        <ul>
+                            <li><strong>200</strong> - OK</li>
+                            <li><strong>400</strong> - Bad Request</li>
+                            <li><strong>404</strong> - Not Found (container)</li>
+                            <li><strong>409</strong> - Conflict (already exist)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row-fluid">
+            <div class="span9 offset2 method">
+                <h2 id="retrieve_document">Retrieve Document</h2>
+                <div class="row-fluid">
+                    <div class="span6">
+                        <div class="url"><div class="get">GET</div><div class="path">documents/{container}/{path:.+}</div></div>
+                        <h3>Query parameter:</h3>
+                        <ul>
+                            <li>container: string (mandatory)</li>
+                            <li>path: string (mandatory)</li>
+                        </ul>
+                    </div>
+                    <div class="span6">
+                        <h3>Responses:</h3>
+                        <ul>
+                            <li><strong>200</strong> - OK + document stream</li>
+                            <li><strong>404</strong> - Not Found</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row-fluid">
+            <div class="span9 offset2 method">
+                <h2 id="delete_document">Delete Document</h2>
+                <div class="row-fluid">
+                    <div class="span6">
+                        <div class="url"><div class="delete">DELETE</div><div class="path">/documents/{container}/{path:.+}</div></div>
+                        <h3>Query parameters:</h3>
+                        <ul>
+                            <li>container: string (mandatory)</li>
+                            <li>path: string (mandatory)</li>
+                        </ul>
+                    </div>
+                    <div class="span6">
+                        <h3>Responses:</h3>
+                        <ul>
+                            <li><strong>200</strong> - OK</li>
+                            <li><strong>404</strong> - Not Found</li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row-fluid">
+            <div class="span9 offset2 method">
+                <h2 id="document_is_exist">Document is exist?</h2>
+                Not (already) implemented.
+            </div>
+        </div>
+        
+        <div class="row-fluid">
+            <div class="span9 offset2 method">
+                <h2 id="document_integrity">Check Document integrity</h2>
+                Not (already) implemented.
+            </div>
+        </div>
+        
+        
+    </body>
+</html>

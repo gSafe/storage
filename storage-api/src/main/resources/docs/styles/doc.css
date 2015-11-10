@@ -1,0 +1,159 @@
+/*
+ * #%L
+ * storage-api
+ * %%
+ * Copyright (C) 2013 - 2014 gSafe
+ * %%
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * #L%
+ */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FAFAFA;
+    color: #3E4349;
+    line-height: 20px;
+    font-size: 16px;
+    margin: 0 2em 5em;
+}
+
+#novapost {margin-left: 2em;}
+header {margin: 20px 0 100px;}
+    header h1 {margin-top: 0; font-size: 35px; /*line-height: 43px;*/}
+        h1 img {vertical-align: middle;}
+
+h1, h2 {
+    color: #212224;
+    font-family: Arial,sans-serif;
+    font-weight: normal;
+}
+
+
+h2{
+    clear: both;
+    line-height: 30px;
+    color: #CE6406;
+    font-size: 150%;
+    padding: 5px 0 4px 0;
+    border-bottom: 1px solid #C8D5E3;
+}
+h2.new_version {
+    color: #3E4349;
+    margin: 80px 0 20px;
+    border: none;
+}
+
+h3 {font-weight: bold; font-size: 16px; line-height: 20px;  margin: 30px 0 5px;}
+
+p {margin: 10px 0;}
+
+li {list-style-type: none;}
+
+pre {
+    background-color: #FAFAFA;
+    box-shadow: 0 0 4px #D8D8D8;
+    color: #222222;
+    font-size: 13px;
+    margin: 10px 0;
+    padding: 8px;
+}
+
+dl {margin: 0;}
+    dt {font-weight: normal;}
+    dd {font-size: 14px; font-style: oblique;}
+ul {margin: 0;}
+
+ul.subchangelogs {margin-left: 40px;}
+
+table {margin: 20px 0; border: 1px solid #DDDDDD; border-collapse: separate; border-spacing: 0;}
+th {padding: 8px 30px; background-color: #eee;}
+td {text-align: center; padding: 8px 20px; border-top: 1px solid #DDDDDD; border-left: 1px solid #DDDDDD;}
+td.na {background-color: #ccc;}
+
+#table_of_content {
+    border: 1px solid #C8D5E3;
+    padding: 2em;
+    margin-bottom: 1em;
+    position: fixed;
+}
+
+.method {margin-bottom: 40px; }
+.url{
+    margin: 10px 0;
+    font-family: "Courier";
+    line-height: 20px;
+}
+
+    .url .post {
+        background-color: #AAD400; 
+        color: #333; 
+        border-radius: 2px 0px 0px 2px; 
+        padding: 4px;
+        display: inline;
+        border: 1px solid #AAD400;
+        font-weight: bold;
+    }
+    .url .get {
+        background-color: #5599ff; 
+        color: #333; 
+        border-radius: 2px 0px 0px 2px; 
+        padding: 4px;
+        padding-right: 14px;
+        display: inline;
+        border: 1px solid #5599ff;
+        font-weight: bold;
+    }
+    .url .head {
+        background-color: #ff0066; 
+        color: #333; 
+        border-radius: 2px 0px 0px 2px; 
+        padding: 4px;
+        display: inline;
+        border: 1px solid #ff0066;
+        font-weight: bold;
+    }
+    .url .put {
+        background-color: #ffcc00; 
+        color: #333; 
+        border-radius: 2px 0px 0px 2px; 
+        padding: 4px;
+        display: inline;
+        border: 1px solid #ffcc00;
+        font-weight: bold;
+    }
+    .url .delete {
+        background-color: #ff0000; 
+        color: #333; 
+        border-radius: 2px 0px 0px 2px; 
+        padding: 4px;
+        display: inline;
+        border: 1px solid #ff0000;
+        font-weight: bold;
+    }
+    .url .path {
+        color: #000;
+        padding: 4px;
+        display: inline;
+        background-color: #fafafa;
+        border: 1px solid #ccc;
+    }
+
+/*-----------------------------------------*/
+.attributes dt {font-weight: bold;}
+.components dt {font-weight: bold;}
+.capacities em {color: red;}
+
+.capacities {font-size: 14px;}
+.capacities td.low {background-color: #5BB75B;}
+.capacities td.medium {background-color: #F09F1B;}
+.capacities td.higth {background-color: #DA4F49;}

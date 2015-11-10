@@ -1,0 +1,15 @@
+.classpath
+.project
+.settings
+target
+bin
+.vagrant
+.idea
+
+*.svn
+*.log
+*.swp
+*.imp
+*.ipr
+*.iws
+*.iml
